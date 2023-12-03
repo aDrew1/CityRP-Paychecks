@@ -2,6 +2,7 @@ package io.github.adrew1.cityrppaychecks;
 
 import io.github.adrew1.cityrppaychecks.Commands.PaycheckCommand;
 import io.github.adrew1.cityrppaychecks.Commands.PaycheckTabComplete;
+import io.github.adrew1.cityrppaychecks.Utils.UpdateChecker;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -29,6 +30,13 @@ public final class CityRPPaychecks extends JavaPlugin {
 
         plugin = this;
         createFiles();
+
+        // Update Check
+        new UpdateChecker(this, 100745).getLatestVersion(version -> {
+            if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+                log.info(String.format("CityRP Paychecks is up to date!"));
+            } else { log.severe(String.format("CityRP Paychecks has an update! Please visit the spigot page to update the plugin!")); }
+        });
 
         // VaultAPI Init
         setupEconomy();
