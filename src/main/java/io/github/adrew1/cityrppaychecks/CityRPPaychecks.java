@@ -35,7 +35,9 @@ public final class CityRPPaychecks extends JavaPlugin {
         new UpdateChecker(this, 100745).getLatestVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
                 log.info(String.format("CityRP Paychecks is up to date!"));
-            } else { log.severe(String.format("CityRP Paychecks has an update! Please visit the spigot page to update the plugin!")); }
+            } else {
+                log.severe(String.format("CityRP Paychecks has an update! Please visit the spigot page to update the plugin!"));
+            }
         });
 
         // VaultAPI Init
