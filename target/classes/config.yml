@@ -1,0 +1,48 @@
+#####################################
+#          CityRP Paychecks         #
+#             by: aDrew1            #
+#####################################
+
+#####################################
+#              SETTINGS             #
+#####################################
+
+# USE /pc help TO VIEW COMMANDS!
+
+# Permissions:
+# paycheck.admin - Allows usage of the help, reload, and send commands.
+
+# Placeholders:
+# %a% - Amount of money deposited.
+# %p% - Player's name who is seeing the message. (For "Invalid Player", this variable will represent the target player!)
+
+Prefix: '&c&lCityRP &8&l»'
+Incorrect Usage: '&cError! &7Incorrect command usage. Use &e/paycheck help &7to see all commands.'
+No Permission: '&cError! &7You do not have permission to do this!'
+Invalid Player: '&cError! &e%p% &7was not found or is not online.'
+Reload: '&7Configuration reloaded.'
+
+Message:
+    - ' '
+    - '&c&lCityRP Paycheck'
+    - '&eA Paycheck has been deposited to your account!'
+    - '&7Deposited: &e$%a%'
+    - ' '
+
+Paycheck Frequency: 1 # in minutes
+
+#########################################################################################
+#                                        PAYCHECKS                                      #
+#########################################################################################
+#  100: # Add as many of these groups as you would like. You can name them anything.    #
+#    perm: 'cityrp.paycheck.100' # Set the permission to whatever you would like.       #
+#    amt: 100 # This amount must be a positive whole number (integer).                  #
+#########################################################################################
+
+Paychecks:
+  100:
+    perm: 'paycheck.100'
+    amt: 100.00
+  200:
+    perm: 'paycheck.200'
+    amt: 200.00
